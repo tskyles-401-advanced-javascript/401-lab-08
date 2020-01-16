@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Categories = require('../models/category-model');
+const Categories = require('../models/categories-model');
 
 const categories = new Categories;
 
