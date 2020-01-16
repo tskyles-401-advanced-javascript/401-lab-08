@@ -2,7 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const products = require('../models/products-model');
+const Products = require('../models/products-model');
+
+const products = new Products;
 
 router.get('/api/v1/products', getProducts);
 router.get('/api/v1/products/:id', getProduct);

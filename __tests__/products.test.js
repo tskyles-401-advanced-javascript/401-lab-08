@@ -13,7 +13,7 @@ describe('product routes', () => {
       .then(results => {
         return mockRequest.get('/api/v1/products')
           .then(data => {
-            Object.keys(testProduct).forEach(key => {
+            Object.keys(obj).forEach(key => {
               expect(data.body.results[0][key]).toEqual(obj[key]);
             });
           });

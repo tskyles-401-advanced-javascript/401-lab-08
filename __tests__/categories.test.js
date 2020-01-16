@@ -7,7 +7,7 @@ const mockRequest = require(supergoose(server));
 describe('categories routes', () => {
 
   it('should get() categoriess', () => {
-    const obj = { name: 'test', quantity: 10 };
+    const obj = { name: 'test' };
     return mockRequest.post('/api/v1/categories')
       .send(obj)
       .then(results => {
@@ -21,7 +21,7 @@ describe('categories routes', () => {
   });
 
   it('should get() a categories', () => {
-    const obj = { name: 'test', quantity: 10 };
+    const obj = { name: 'test' };
     return mockRequest.post('/api/v1/categories')
       .send(obj)
       .then(results => {
@@ -35,7 +35,7 @@ describe('categories routes', () => {
   });
 
   it('should post a categories', () => {
-    const obj = { name: 'test', quantity: 10 };
+    const obj = { name: 'test' };
     return mockRequest.post('/api/v1/categories')
       .send(obj)
       .then(results => {
@@ -46,7 +46,7 @@ describe('categories routes', () => {
   });
 
   it('should update a categories', () => {
-    const obj = { name: 'test', quantity: 10 };
+    const obj = { name: 'test' };
     let updated = { name: 'newTest', price: 1 };
 
     return mockRequest.post('/api/v1/categories')
@@ -63,7 +63,7 @@ describe('categories routes', () => {
   });
 
   it('should delete a categories', () => {
-    const obj = { name: 'test', quantity: 10 };
+    const obj = { name: 'test' };
     return mockRequest.post('/api/v1/categories')
       .send(obj)
       .then(results => {

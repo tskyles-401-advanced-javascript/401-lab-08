@@ -2,7 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const categories = require('../models/category-model');
+const Categories = require('../models/category-model');
+
+const categories = new Categories;
 
 router.get('/api/v1/categories', getCategories);
 router.get('/api/v1/categories/:id', getCategory);
