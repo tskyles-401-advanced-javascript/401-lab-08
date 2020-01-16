@@ -54,13 +54,19 @@ describe('product routes', () => {
   });
 
   it('should update a new food', () => {
-    let updated = { name: 'carrots', price: 1 };
+    const obj = { name: 'test', quantity: 10 };
+    let updated = { name: 'newTest', price: 1 };
 
-    return product.get(1)
-      .then(record => {
-        Object.keys(testProduct).forEach(key => {
-          expect(record[key]).toEqual(testProduct[key]);
-        });
+    return mockRequest.post('/api/v1/products')
+      .send(obj)
+      .then(results => {
+        return mockRequest.put(`/api/v1/products/${results.body.id}`)
+          .send(updated)
+          .then(data => {
+            Object.keys(updated).forEach(key => {
+              expect(data.body[key]).toEqual(updated[key]);
+            });
+          });
       });
   });
 });
