@@ -53,7 +53,7 @@ describe('product routes', () => {
       });
   });
 
-  it('should update a new food', () => {
+  it('should update a product', () => {
     const obj = { name: 'test', quantity: 10 };
     let updated = { name: 'newTest', price: 1 };
 
@@ -65,6 +65,20 @@ describe('product routes', () => {
           .then(data => {
             Object.keys(updated).forEach(key => {
               expect(data.body[key]).toEqual(updated[key]);
+            });
+          });
+      });
+  });
+
+  it('should delete a product', () => {
+    const obj = { name: 'test', quantity: 10 };
+    return mockRequest.post('/api/v1/products')
+      .send(obj)
+      .then(results => {
+        return mockRequest.delete(`/api/v1/products/${results.body.id}`)
+          .then(data => {
+            Object.keys(obj).forEach(key => {
+              expect(data.body[key]).not.toEqual(obj[key]);
             });
           });
       });
