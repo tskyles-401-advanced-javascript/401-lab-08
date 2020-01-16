@@ -1,6 +1,8 @@
 'use strict';
 
-const DataModel = require('@tskyles/mongo-model-package');
+const DataModel = require('../models/mongo-model');
+const schema = require('../schema/product-schema');
+
 /**
  * model for products
  * @class Products
@@ -8,10 +10,6 @@ const DataModel = require('@tskyles/mongo-model-package');
  */
 class Products extends DataModel {
   constructor() {
-    let schema = {
-      name: { type: 'string', required: true },
-      quantity: { type: 'number', required: true },
-    };
     super(schema);
   }
 }

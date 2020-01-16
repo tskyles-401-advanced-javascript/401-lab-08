@@ -1,4 +1,6 @@
-const DataModel = require('@tskyles/mongo-model-package');
+const DataModel = require('../models/mongo-model');
+const schema = require('../schema/categories-schema');
+
 /**
  * model for categories
  * @class Categories
@@ -6,9 +8,6 @@ const DataModel = require('@tskyles/mongo-model-package');
  */
 class Categories extends DataModel {
   constructor() {
-    let schema = {
-      name: { type: 'string', required: true },
-    };
     super(schema);
   }
 }
