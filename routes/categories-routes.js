@@ -8,7 +8,7 @@ const categories = new Categories;
 
 router.get('/api/v1/categories', getCategories);
 router.get('/api/v1/categories/:id', getCategory);
-router.post('/api/v1/categories/:id', postCategory);
+router.post('/api/v1/categories', postCategory);
 router.put('/api/v1/categories/:id', putCategory);
 router.delete('/api/v1/categories/:id', deleteCategory);
 /**

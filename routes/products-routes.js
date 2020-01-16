@@ -8,7 +8,7 @@ const products = new Products;
 
 router.get('/api/v1/products', getProducts);
 router.get('/api/v1/products/:id', getProduct);
-router.post('/api/v1/products/:id', postProduct);
+router.post('/api/v1/products', postProduct);
 router.put('/api/v1/products/:id', putProduct);
 router.delete('/api/v1/products/:id', deleteProduct);
 /**
