@@ -10,4 +10,4 @@ const mongooseOptions = {
   useUnifiedTopology: true,
 };
 mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
-server.start();
+server.start(5000);
