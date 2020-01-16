@@ -34,7 +34,7 @@ function getProducts(req, res, next){
  */
 function getProduct(req, res, next){
   products.get(req.params.id)
-    .then(results => res.status(200).json(results[0]))
+    .then(results => res.status(200).json(results))
     .catch(next);
 }
 /**
@@ -44,7 +44,7 @@ function getProduct(req, res, next){
  */
 function postProduct(req, res, next){
   products.post(req.body)
-    .then(results => res.status(200).json(results[0]))
+    .then(results => res.status(200).json(results))
     .catch(next);
 }
 /**
@@ -54,7 +54,7 @@ function postProduct(req, res, next){
  */
 function putProduct(req, res, next){
   products.put(req.params.id, req.body)
-    .then(results => res.status(200).json(results[0]))
+    .then(results => res.status(200).json(results))
     .catch(next);
 }
 /**
@@ -64,7 +64,8 @@ function putProduct(req, res, next){
  */
 function deleteProduct(req, res, next){
   products.delete(req.params.id)
-    .then(results => res.status(200).json(results));
+    .then(results => res.status(200).json(results))
+    .catch(next);
 }
 
 module.exports = router;

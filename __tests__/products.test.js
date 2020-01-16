@@ -25,7 +25,7 @@ describe('product routes', () => {
     return mockRequest.post('/api/v1/products')
       .send(obj)
       .then(results => {
-        return mockRequest.get(`/api/v1/products/${results.body.id}`)
+        return mockRequest.get(`/api/v1/products/${results.body._id}`)
           .then(data => {
             Object.keys(obj).forEach(key => {
               expect(data.body[key]).toEqual(obj[key]);
@@ -47,12 +47,12 @@ describe('product routes', () => {
 
   it('should update a product', () => {
     const obj = { name: 'test', quantity: 10 };
-    let updated = { name: 'newTest', price: 1 };
+    let updated = { name: 'newTest', quantity: 1 };
 
     return mockRequest.post('/api/v1/products')
       .send(obj)
       .then(results => {
-        return mockRequest.put(`/api/v1/products/${results.body.id}`)
+        return mockRequest.put(`/api/v1/products/${results.body._id}`)
           .send(updated)
           .then(data => {
             Object.keys(updated).forEach(key => {

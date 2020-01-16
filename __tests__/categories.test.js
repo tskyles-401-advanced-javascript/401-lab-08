@@ -52,7 +52,6 @@ describe('categories routes', () => {
     return mockRequest.post('/api/v1/categories')
       .send(obj)
       .then(results => {
-        console.log(results.body);
         return mockRequest.put(`/api/v1/categories/${results.body._id}`)
           .send(updated)
           .then(data => {
