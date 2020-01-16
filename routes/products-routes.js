@@ -43,7 +43,7 @@ function getProduct(req, res, next){
  * @param {*} next
  */
 function postProduct(req, res, next){
-  products.create(req.body)
+  products.post(req.body)
     .then(results => res.status(200).json(results[0]))
     .catch(next);
 }
@@ -53,7 +53,7 @@ function postProduct(req, res, next){
  * @param {*} next
  */
 function putProduct(req, res, next){
-  products.update(req.params.id, req.body)
+  products.put(req.params.id, req.body)
     .then(results => res.status(200).json(results[0]))
     .catch(next);
 }

@@ -2,7 +2,7 @@
 
 const { server } = require('../lib/server');
 const supergoose = require('@code-fellows/supergoose');
-const mockRequest = require(supergoose(server));
+const mockRequest = supergoose(server);
 
 describe('product routes', () => {
 

@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-let categories = mongoose.Schema( {
+let categories = new mongoose.Schema( {
   name: { type: 'string', required: true },
 });
 

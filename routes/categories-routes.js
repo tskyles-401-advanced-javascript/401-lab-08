@@ -35,7 +35,7 @@ function getCategories(req, res, next){
  */
 function getCategory(req, res, next){
   categories.get(req.params.id)
-    .then(results => res.status(200).json(results[0]))
+    .then(results => res.status(200).json(results))
     .catch(next);
 }
 /**
@@ -45,7 +45,7 @@ function getCategory(req, res, next){
  */
 function postCategory(req, res, next){
   categories.post(req.body)
-    .then(results => res.status(200).json(results[0]))
+    .then(results => res.status(200).json(results))
     .catch(next);
 }
 /**
@@ -55,7 +55,7 @@ function postCategory(req, res, next){
  */
 function putCategory(req, res, next){
   categories.put(req.params.id, req.body)
-    .then(results => res.status(200).json(results[0]))
+    .then(results => res.status(200).json(results))
     .catch(next);
 }
 /**
@@ -65,7 +65,8 @@ function putCategory(req, res, next){
  */
 function deleteCategory(req, res, next){
   categories.delete(req.params.id)
-    .then(results => res.status(200).json(results));
+    .then(results => res.status(200).json(results))
+    .catch(next);
 }
 
 module.exports = router;

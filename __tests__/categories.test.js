@@ -2,11 +2,11 @@
 
 const { server } = require('../lib/server');
 const supergoose = require('@code-fellows/supergoose');
-const mockRequest = require(supergoose(server));
+const mockRequest = supergoose(server);
 
 describe('categories routes', () => {
 
-  it('should get() categoriess', () => {
+  it('should get() categories', () => {
     const obj = { name: 'test' };
     return mockRequest.post('/api/v1/categories')
       .send(obj)
@@ -25,7 +25,7 @@ describe('categories routes', () => {
     return mockRequest.post('/api/v1/categories')
       .send(obj)
       .then(results => {
-        return mockRequest.get(`/api/v1/categories/${results.body.id}`)
+        return mockRequest.get(`/api/v1/categories/${results.body._id}`)
           .then(data => {
             Object.keys(obj).forEach(key => {
               expect(data.body[key]).toEqual(obj[key]);
@@ -47,14 +47,16 @@ describe('categories routes', () => {
 
   it('should update a categories', () => {
     const obj = { name: 'test' };
-    let updated = { name: 'newTest', price: 1 };
+    const updated = { name: 'newTest'};
 
     return mockRequest.post('/api/v1/categories')
       .send(obj)
       .then(results => {
-        return mockRequest.put(`/api/v1/categories/${results.body.id}`)
+        console.log(results.body);
+        return mockRequest.put(`/api/v1/categories/${results.body._id}`)
           .send(updated)
           .then(data => {
+            console.log(data.body);
             Object.keys(updated).forEach(key => {
               expect(data.body[key]).toEqual(updated[key]);
             });

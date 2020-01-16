@@ -20,7 +20,7 @@ class Model {
     if(_id){
       return this.schema.findOne( {_id} );
     }
-    else this.schema.find();
+    else return this.schema.find({});
   }
   /**
  *
@@ -28,13 +28,11 @@ class Model {
  * @param {*} record
  * @memberof Model
  */
-  create(record){
-    if(typeof record === 'object'){
-      let newObject = new this.schema(record);
-      return newObject.save();
-    }
-    else {
-      return Error('something went wrong.. Could not save to db..');}
+  post(record){
+    let newObject = new this.schema(record);
+    return newObject.save();
+  
+
   }
   
   /**
@@ -44,7 +42,7 @@ class Model {
  * @param {*} record
  * @memberof Model
  */
-  update(_id, record){
+  put(_id, record){
     if(_id && record){
       return this.schema.findByIdAndUpdate(_id, record, {new: true});
     }
