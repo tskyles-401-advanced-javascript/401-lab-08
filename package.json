@@ -1,0 +1,31 @@
+{
+  "name": "401-lab-08",
+  "version": "1.0.0",
+  "description": "Express Routing &amp; Connected API",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tskyles-401-advanced-javascript/401-lab-08.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tskyles-401-advanced-javascript/401-lab-08/issues"
+  },
+  "homepage": "https://github.com/tskyles-401-advanced-javascript/401-lab-08#readme",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.1",
+    "@tskyles/mongo-model-package": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.8.7",
+    "morgan": "^1.9.1"
+  }
+}
